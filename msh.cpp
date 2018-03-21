@@ -10,35 +10,26 @@
 //Runs the core processes of the shell: reading, interpreting, and executing
 void shell()
 {
- 	//Displays prompt
-	std::cout << "msh > ";
-	//Creates string for the entered command and reads it
-	char command[VAR_MAX];
+	std::cout << "msh > ";		//Displays prompt
+	char command[VAR_MAX];		//Creates string for the entered command and reads it
 	std::cin.getline(command, VAR_MAX);
- 	//Creates vector for the tokens
-	std::vector<char*> tokens;
-	//Creates a value for getting tokens
-	char* tok_val;
-	//Gets the first token
-	tok_val = strtok(command, " ");
-	//Iterates through the entered command line and gets every token separated by spaces
-	while(tok_val != NULL)
+	std::vector<char*> tokens;	//Creates vector for the tokens
+	char* tok_val;			//Creates a value for getting tokens
+	tok_val = strtok(command, " ");	//Gets the first token
+	while(tok_val != NULL)		//Iterates through the entered command line and gets every token separated by spaces
 	{
-		//Adds the valid token to the token vector
-		tokens.push_back(tok_val);
-		//Gets the next token
-		tok_val = strtok(NULL, " ");
+		tokens.push_back(tok_val);	//Adds the valid token to the token vector
+		tok_val = strtok(NULL, " ");	//Gets the next token
 	}
 	
-	//the tokens have been assemlbed, now they may be utilized
+	//the tokens have been assembled, now they may be utilized
 }
 
 int main()
 {
 	while(1)
 	{
-		//Runs loop that serves as the shell
-		shell();
+		shell();		//Runs loop that serves as the shell
 	}
 	return 0;
 }
